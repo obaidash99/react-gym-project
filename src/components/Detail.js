@@ -34,10 +34,11 @@ const Detail = ({ exerciseDetail }) => {
 					{name}
 				</Typography>
 				<Typography variant="h6">
-					Exercises keep you strong. <span style={{ fontWeight: '700' }}>{name}</span>{' '}
+					Exercises keep you strong.{' '}
+					<span style={{ fontWeight: '700', textTransform: 'capitalize' }}>{name}</span>{' '}
 					{'  '} is one of the best exercises to target your{' '}
-					<span style={{ fontWeight: '700' }}>{target}</span>. It will help you improve
-					your mood and gain energy.
+					<span style={{ fontWeight: '700', textTransform: 'capitalize' }}>{target}</span>
+					. It will help you improve your mood and gain energy.
 				</Typography>
 				{extraDetail.map((item) => (
 					<Stack key={item.name} direction="row" gap="25px" alignItems="center" m="20px">
