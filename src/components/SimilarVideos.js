@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SimilarVideos = () => {
+const SimilarVideos = ({ targetMuscleExercises, equipmentExercises }) => {
 	return <div>SimilarVideos</div>;
 };
 
