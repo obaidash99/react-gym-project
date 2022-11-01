@@ -4,9 +4,9 @@ import { InfinitySpin } from 'react-loader-spinner';
 
 const Loader = () => {
 	return (
-		<dStackv direction="row" alignItems="center" justifyContent="center" width="100%">
+		<Stack direction="row" alignItems="center" justifyContent="center" width="100%">
 			<InfinitySpin color="gray" />
-		</dStackv>
+		</Stack>
 	);
 };
 
