@@ -9,6 +9,7 @@ body {
 	box-sizing: border-box;
 	-ms-overflow-style: none; /* IE 11 */
 	scrollbar-width: none; /* Firefox 64 */
+	scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
