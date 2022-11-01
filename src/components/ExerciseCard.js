@@ -8,6 +8,7 @@ const ExerciseCard = ({ exercise }) => {
 			<img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
 			<Stack direction="row">
 				<Button
+					className="card-btn"
 					sx={{
 						ml: '21px',
 						color: '#FFF',
@@ -21,6 +22,7 @@ const ExerciseCard = ({ exercise }) => {
 					{exercise.bodyPart}
 				</Button>
 				<Button
+					className="card-btn"
 					sx={{
 						ml: '21px',
 						color: '#FFF',

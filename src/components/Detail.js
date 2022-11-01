@@ -34,9 +34,9 @@ const Detail = ({ exerciseDetail }) => {
 					{name}
 				</Typography>
 				<Typography variant="h6">
-					Exercises keep you strong.{' '}
-					<span style={{ fontWeight: '700', textTransform: 'capitalize' }}>{name}</span>{' '}
-					{'  '} is one of the best exercises to target your{' '}
+					Exercises keep you strong.
+					<span style={{ fontWeight: '700', textTransform: 'capitalize' }}>{name}</span>
+					is one of the best exercises to target your
 					<span style={{ fontWeight: '700', textTransform: 'capitalize' }}>{target}</span>
 					. It will help you improve your mood and gain energy.
 				</Typography>

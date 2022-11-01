@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box } from '@mui/material';
 
-import Detail from '../components/Detail.js';
-import ExerciseVideos from '../components/ExerciseVideos.js';
-import SimilarExercises from '../components/SimilarExercises.js';
 import { exerciseOptions, fetchData, youtubeOptions } from '../utilities/fetchData';
+import Detail from '../components/Detail';
+import ExerciseVideos from '../components/ExerciseVideos';
+import SimilarExercises from '../components/SimilarExercises';
 
 const ExerciseDetail = () => {
 	const [exerciseDetail, setExerciseDetail] = useState({});
@@ -15,6 +15,8 @@ const ExerciseDetail = () => {
 	const { id } = useParams();
 
 	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+
 		const fetchExercisesData = async () => {
 			const exerciseDbUrl = 'https://exercisedb.p.rapidapi.com';
 			const youtubeSearchUrl = 'https://youtube-search-and-download.p.rapidapi.com';
@@ -26,7 +28,7 @@ const ExerciseDetail = () => {
 			setExerciseDetail(exerciseDetailData);
 
 			const exerciseVideosData = await fetchData(
-				`${youtubeSearchUrl}/search?query=${exerciseDetailData.name}`,
+				`${youtubeSearchUrl}/search?query=${exerciseDetailData.name} exercise`,
 				youtubeOptions
 			);
 			setExerciseVideos(exerciseVideosData.contents);
@@ -37,18 +39,20 @@ const ExerciseDetail = () => {
 			);
 			setTargetMuscleExercises(targetMuscleExercisesData);
 
-			const equipmentExercisesData = await fetchData(
-				`${exerciseDbUrl}/exercises/target/${exerciseDetailData.equipment}`,
+			const equimentExercisesData = await fetchData(
+				`${exerciseDbUrl}/exercises/equipment/${exerciseDetailData.equipment}`,
 				exerciseOptions
 			);
-			setEquipmentExercises(equipmentExercisesData);
+			setEquipmentExercises(equimentExercisesData);
 		};
 
 		fetchExercisesData();
 	}, [id]);
 
+	if (!exerciseDetail) return <div>No Data</div>;
+
 	return (
-		<Box>
+		<Box sx={{ mt: { lg: '96px', xs: '60px' } }}>
 			<Detail exerciseDetail={exerciseDetail} />
 			<ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
 			<SimilarExercises

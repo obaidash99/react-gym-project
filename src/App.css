@@ -38,6 +38,7 @@ body {
 
 .right-arrow {
 	right: 140px;
+	z-index: 50;
 }
 
 .right-arrow:hover,
@@ -92,6 +93,9 @@ body {
 .exercise-card:hover,
 .bodyPart-card:hover {
 	transform: scale(1.1, 1.1);
+}
+.exercise-card .card-btn:hover {
+	color: black;
 }
 
 .search-btn:hover {

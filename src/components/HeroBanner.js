@@ -6,7 +6,11 @@ import HeroManBanner from '../assets/images/man.png';
 const HeroBanner = () => {
 	return (
 		<Box
-			sx={{ mt: { lg: '212px', xs: '70px' }, ml: { sm: '50px' } }}
+			sx={{
+				mt: { lg: '212px', xs: '70px' },
+				// ml: { sm: '50px' },
+				textAlign: { lg: 'left', md: 'center', xs: 'center' },
+			}}
 			position="relative"
 			p="20px"
 		>
